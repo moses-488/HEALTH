@@ -1,0 +1,58 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+ {% block content %}
+
+<table class="table table-bordered table-dark">
+
+
+
+
+    <tr> 
+        <th>Name</th>
+        <th>Email <Address></Address></th>
+        <th>Phone</th>
+        <th>Date and Time</Time><Time></Time></th>
+        <th>Doctor</th>
+        <th>Department</th>
+        <th>Message</th>
+        <th>Actions</th>
+
+     
+
+    </tr>
+
+
+    {% for appointment in allappointment %}
+
+         <tr>
+        <td>{{ appointment.name}}</td>
+        <td>{{ appointment.email}}</td>
+        <td>{{ appointment.phone}}</td>
+        <td>{{ appointment.datetime}}</td>
+        <td>{{ appointment.doctor}}</td>
+        <td>{{ appointment.department}}</td>
+        <td>{{ appointment.message}}</td>
+        <td>
+            <a href="/edit/{{ appointment.id }}" class="btn btn-warning"> Edit</a>
+            <a href="/delete/{{ appointment.id }}" class="btn btn-info">Delete</a>
+
+        </td>
+
+
+
+    </tr>
+
+
+
+
+
+
+    {%endfor%}
+
+
+
+</table>
+
+ {% endblock %}
